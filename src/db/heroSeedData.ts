@@ -1,0 +1,497 @@
+import { Hero } from '../types';
+
+export const DEFAULT_HEROES: Omit<Hero, 'createdAt' | 'updatedAt'>[] = [
+  // Season 1
+  {
+    id: 'barbarian',
+    name: 'Barbarian',
+    imageUrl: 'https://dice-throne.rulepop.com/heroes/barbarian.webp',
+    rulepopUrl: 'https://rulepop.com/dice-throne/#barbarian',
+    complexity: 1,
+    releaseSet: 'Season 1',
+    releaseWave: '1',
+    tags: ['Offensive', 'Beginner Friendly'],
+    owned: 1,
+    active: 1
+  },
+  {
+    id: 'moon-elf',
+    name: 'Moon Elf',
+    imageUrl: 'https://dice-throne.rulepop.com/heroes/moon-elf.webp',
+    rulepopUrl: 'https://rulepop.com/dice-throne/#moon-elf',
+    complexity: 2,
+    releaseSet: 'Season 1',
+    releaseWave: '1',
+    tags: ['Defensive', 'Control', 'Beginner Friendly'],
+    owned: 1,
+    active: 1
+  },
+  {
+    id: 'pyromancer',
+    name: 'Pyromancer',
+    imageUrl: 'https://dice-throne.rulepop.com/heroes/pyromancer.webp',
+    rulepopUrl: 'https://rulepop.com/dice-throne/#pyromancer',
+    complexity: 2,
+    releaseSet: 'Season 1',
+    releaseWave: '1',
+    tags: ['Offensive', 'Aggressive'],
+    owned: 1,
+    active: 1
+  },
+  {
+    id: 'shadow-thief',
+    name: 'Shadow Thief',
+    imageUrl: 'https://dice-throne.rulepop.com/heroes/shadow-thief.webp',
+    rulepopUrl: 'https://rulepop.com/dice-throne/#shadow-thief',
+    complexity: 5,
+    releaseSet: 'Season 1',
+    releaseWave: '1',
+    tags: ['Control', 'Tactical', 'Advanced'],
+    owned: 1,
+    active: 1
+  },
+  {
+    id: 'monk',
+    name: 'Monk',
+    imageUrl: 'https://dice-throne.rulepop.com/heroes/monk.webp',
+    rulepopUrl: 'https://rulepop.com/dice-throne/#monk',
+    complexity: 2,
+    releaseSet: 'Season 1',
+    releaseWave: '1',
+    tags: ['Defensive', 'Tactical'],
+    owned: 1,
+    active: 1
+  },
+  {
+    id: 'paladin',
+    name: 'Paladin',
+    imageUrl: 'https://dice-throne.rulepop.com/heroes/paladin.webp',
+    rulepopUrl: 'https://rulepop.com/dice-throne/#paladin',
+    complexity: 4,
+    releaseSet: 'Season 1',
+    releaseWave: '1',
+    tags: ['Defensive', 'Tactical'],
+    owned: 1,
+    active: 1
+  },
+  {
+    id: 'ninja',
+    name: 'Ninja',
+    imageUrl: 'https://dice-throne.rulepop.com/heroes/ninja.webp',
+    rulepopUrl: 'https://rulepop.com/dice-throne/#ninja',
+    complexity: 3,
+    releaseSet: 'Season 1',
+    releaseWave: '1',
+    tags: ['Offensive', 'Combo'],
+    owned: 1,
+    active: 1
+  },
+  {
+    id: 'tactician',
+    name: 'Tactician',
+    imageUrl: 'https://dice-throne.rulepop.com/heroes/tactician.webp',
+    rulepopUrl: 'https://rulepop.com/dice-throne/#tactician',
+    complexity: 4,
+    releaseSet: 'Season 1',
+    releaseWave: '1',
+    tags: ['Control', 'Tactical', 'Advanced'],
+    owned: 1,
+    active: 1
+  },
+
+  // Season 2
+  {
+    id: 'gunslinger',
+    name: 'Gunslinger',
+    imageUrl: 'https://dice-throne.rulepop.com/heroes/gunslinger.webp',
+    rulepopUrl: 'https://rulepop.com/dice-throne/#gunslinger',
+    complexity: 2,
+    releaseSet: 'Season 2',
+    releaseWave: '2',
+    tags: ['Offensive', 'Aggressive'],
+    owned: 1,
+    active: 1
+  },
+  {
+    id: 'samurai',
+    name: 'Samurai',
+    imageUrl: 'https://dice-throne.rulepop.com/heroes/samurai.webp',
+    rulepopUrl: 'https://rulepop.com/dice-throne/#samurai',
+    complexity: 2,
+    releaseSet: 'Season 2',
+    releaseWave: '2',
+    tags: ['Offensive', 'Tactical'],
+    owned: 1,
+    active: 1
+  },
+  {
+    id: 'tactician-s2',
+    name: 'Tactician (Season 2)',
+    imageUrl: 'https://dice-throne.rulepop.com/heroes/tactician.webp',
+    rulepopUrl: 'https://rulepop.com/dice-throne/#tactician',
+    complexity: 4,
+    releaseSet: 'Season 2',
+    releaseWave: '2',
+    tags: ['Control', 'Tactical'],
+    owned: 0,
+    active: 0
+  },
+  {
+    id: 'huntress',
+    name: 'Huntress',
+    imageUrl: 'https://dice-throne.rulepop.com/heroes/huntress.webp',
+    rulepopUrl: 'https://rulepop.com/dice-throne/#huntress',
+    complexity: 5,
+    releaseSet: 'Season 2',
+    releaseWave: '2',
+    tags: ['Offensive', 'Tactical', 'Advanced'],
+    owned: 1,
+    active: 1
+  },
+  {
+    id: 'cursed-pirate',
+    name: 'Cursed Pirate',
+    imageUrl: 'https://dice-throne.rulepop.com/heroes/cursed-pirate.webp',
+    rulepopUrl: 'https://rulepop.com/dice-throne/#cursed-pirate',
+    complexity: 4,
+    releaseSet: 'Season 2',
+    releaseWave: '2',
+    tags: ['Offensive', 'Aggressive', 'Advanced'],
+    owned: 1,
+    active: 1
+  },
+  {
+    id: 'artificer',
+    name: 'Artificer',
+    imageUrl: 'https://dice-throne.rulepop.com/heroes/artificer.webp',
+    rulepopUrl: 'https://rulepop.com/dice-throne/#artificer',
+    complexity: 6,
+    releaseSet: 'Season 2',
+    releaseWave: '2',
+    tags: ['Control', 'Combo', 'Advanced'],
+    owned: 1,
+    active: 1
+  },
+  {
+    id: 'seraph',
+    name: 'Seraph',
+    imageUrl: 'https://dice-throne.rulepop.com/heroes/seraph.webp',
+    rulepopUrl: 'https://rulepop.com/dice-throne/#seraph',
+    complexity: 3,
+    releaseSet: 'Season 2',
+    releaseWave: '2',
+    tags: ['Defensive', 'Tactical'],
+    owned: 1,
+    active: 1
+  },
+  {
+    id: 'vampire-lord',
+    name: 'Vampire Lord',
+    imageUrl: 'https://dice-throne.rulepop.com/heroes/vampire-lord.webp',
+    rulepopUrl: 'https://rulepop.com/dice-throne/#vampire-lord',
+    complexity: 4,
+    releaseSet: 'Season 2',
+    releaseWave: '2',
+    tags: ['Offensive', 'Control'],
+    owned: 1,
+    active: 1
+  },
+
+  // Marvel Dice Throne
+  {
+    id: 'thor',
+    name: 'Thor',
+    imageUrl: 'https://dice-throne.rulepop.com/heroes/thor.webp',
+    rulepopUrl: 'https://rulepop.com/dice-throne/#thor',
+    complexity: 2,
+    releaseSet: 'Marvel',
+    releaseWave: 'Marvel 1',
+    tags: ['Offensive', 'Aggressive'],
+    owned: 1,
+    active: 1
+  },
+  {
+    id: 'loki',
+    name: 'Loki',
+    imageUrl: 'https://dice-throne.rulepop.com/heroes/loki.webp',
+    rulepopUrl: 'https://rulepop.com/dice-throne/#loki',
+    complexity: 4,
+    releaseSet: 'Marvel',
+    releaseWave: 'Marvel 1',
+    tags: ['Control', 'Tactical'],
+    owned: 1,
+    active: 1
+  },
+  {
+    id: 'scarlet-witch',
+    name: 'Scarlet Witch',
+    imageUrl: 'https://dice-throne.rulepop.com/heroes/scarlet-witch.webp',
+    rulepopUrl: 'https://rulepop.com/dice-throne/#scarlet-witch',
+    complexity: 4,
+    releaseSet: 'Marvel',
+    releaseWave: 'Marvel 1',
+    tags: ['Control', 'Combo'],
+    owned: 1,
+    active: 1
+  },
+  {
+    id: 'spider-man',
+    name: 'Spider-Man',
+    imageUrl: 'https://dice-throne.rulepop.com/heroes/spider-man.webp',
+    rulepopUrl: 'https://rulepop.com/dice-throne/#spider-man',
+    complexity: 2,
+    releaseSet: 'Marvel',
+    releaseWave: 'Marvel 1',
+    tags: ['Defensive', 'Combo', 'Beginner Friendly'],
+    owned: 1,
+    active: 1
+  },
+  {
+    id: 'black-panther',
+    name: 'Black Panther',
+    imageUrl: 'https://dice-throne.rulepop.com/heroes/black-panther.webp',
+    rulepopUrl: 'https://rulepop.com/dice-throne/#black-panther',
+    complexity: 1,
+    releaseSet: 'Marvel',
+    releaseWave: 'Marvel 2',
+    tags: ['Offensive', 'Combo', 'Beginner Friendly'],
+    owned: 1,
+    active: 1
+  },
+  {
+    id: 'captain-marvel',
+    name: 'Captain Marvel',
+    imageUrl: 'https://dice-throne.rulepop.com/heroes/captain-marvel.webp',
+    rulepopUrl: 'https://rulepop.com/dice-throne/#captain-marvel',
+    complexity: 2,
+    releaseSet: 'Marvel',
+    releaseWave: 'Marvel 2',
+    tags: ['Offensive', 'Aggressive'],
+    owned: 1,
+    active: 1
+  },
+  {
+    id: 'black-widow',
+    name: 'Black Widow',
+    imageUrl: 'https://dice-throne.rulepop.com/heroes/black-widow.webp',
+    rulepopUrl: 'https://rulepop.com/dice-throne/#black-widow',
+    complexity: 3,
+    releaseSet: 'Marvel',
+    releaseWave: 'Marvel 2',
+    tags: ['Control', 'Combo'],
+    owned: 1,
+    active: 1
+  },
+  {
+    id: 'doctor-strange',
+    name: 'Doctor Strange',
+    imageUrl: 'https://dice-throne.rulepop.com/heroes/doctor-strange.webp',
+    rulepopUrl: 'https://rulepop.com/dice-throne/#doctor-strange',
+    complexity: 5,
+    releaseSet: 'Marvel',
+    releaseWave: 'Marvel 2',
+    tags: ['Control', 'Tactical', 'Advanced'],
+    owned: 1,
+    active: 1
+  },
+
+  // Santa vs Krampus
+  {
+    id: 'santa',
+    name: 'Santa',
+    imageUrl: 'https://dice-throne.rulepop.com/heroes/santa.webp',
+    rulepopUrl: 'https://rulepop.com/dice-throne/#santa',
+    complexity: 2,
+    releaseSet: 'Santa vs Krampus',
+    releaseWave: 'Holiday',
+    tags: ['Defensive', 'Beginner Friendly'],
+    owned: 1,
+    active: 1
+  },
+  {
+    id: 'krampus',
+    name: 'Krampus',
+    imageUrl: 'https://dice-throne.rulepop.com/heroes/krampus.webp',
+    rulepopUrl: 'https://rulepop.com/dice-throne/#krampus',
+    complexity: 4,
+    releaseSet: 'Santa vs Krampus',
+    releaseWave: 'Holiday',
+    tags: ['Offensive', 'Control'],
+    owned: 1,
+    active: 1
+  },
+
+  // X-Men Dice Throne
+  {
+    id: 'wolverine',
+    name: 'Wolverine',
+    imageUrl: 'https://dice-throne.rulepop.com/heroes/wolverine.webp',
+    rulepopUrl: 'https://rulepop.com/dice-throne/#wolverine',
+    complexity: 2,
+    releaseSet: 'X-Men',
+    releaseWave: 'X-Men 1',
+    tags: ['Offensive', 'Aggressive'],
+    owned: 1,
+    active: 1
+  },
+  {
+    id: 'psylocke',
+    name: 'Psylocke',
+    imageUrl: 'https://dice-throne.rulepop.com/heroes/psylocke.webp',
+    rulepopUrl: 'https://rulepop.com/dice-throne/#psylocke',
+    complexity: 4,
+    releaseSet: 'X-Men',
+    releaseWave: 'X-Men 1',
+    tags: ['Offensive', 'Combo'],
+    owned: 1,
+    active: 1
+  },
+  {
+    id: 'iceman',
+    name: 'Iceman',
+    imageUrl: 'https://dice-throne.rulepop.com/heroes/iceman.webp',
+    rulepopUrl: 'https://rulepop.com/dice-throne/#iceman',
+    complexity: 3,
+    releaseSet: 'X-Men',
+    releaseWave: 'X-Men 1',
+    tags: ['Defensive', 'Control'],
+    owned: 1,
+    active: 1
+  },
+  {
+    id: 'rogue',
+    name: 'Rogue',
+    imageUrl: 'https://dice-throne.rulepop.com/heroes/rogue.webp',
+    rulepopUrl: 'https://rulepop.com/dice-throne/#rogue',
+    complexity: 3,
+    releaseSet: 'X-Men',
+    releaseWave: 'X-Men 1',
+    tags: ['Control', 'Combo'],
+    owned: 1,
+    active: 1
+  },
+  {
+    id: 'gambit',
+    name: 'Gambit',
+    imageUrl: 'https://dice-throne.rulepop.com/heroes/gambit.webp',
+    rulepopUrl: 'https://rulepop.com/dice-throne/#gambit',
+    complexity: 3,
+    releaseSet: 'X-Men',
+    releaseWave: 'X-Men 2',
+    tags: ['Offensive', 'Tactical'],
+    owned: 1,
+    active: 1
+  },
+  {
+    id: 'jean-grey',
+    name: 'Jean Grey',
+    imageUrl: 'https://dice-throne.rulepop.com/heroes/jean-grey.webp',
+    rulepopUrl: 'https://rulepop.com/dice-throne/#jean-grey',
+    complexity: 5,
+    releaseSet: 'X-Men',
+    releaseWave: 'X-Men 2',
+    tags: ['Offensive', 'Control', 'Advanced'],
+    owned: 1,
+    active: 1
+  },
+  {
+    id: 'cyclops',
+    name: 'Cyclops',
+    imageUrl: 'https://dice-throne.rulepop.com/heroes/cyclops.webp',
+    rulepopUrl: 'https://rulepop.com/dice-throne/#cyclops',
+    complexity: 2,
+    releaseSet: 'X-Men',
+    releaseWave: 'X-Men 2',
+    tags: ['Offensive', 'Tactical'],
+    owned: 1,
+    active: 1
+  },
+  {
+    id: 'storm',
+    name: 'Storm',
+    imageUrl: 'https://dice-throne.rulepop.com/heroes/storm.webp',
+    rulepopUrl: 'https://rulepop.com/dice-throne/#storm',
+    complexity: 4,
+    releaseSet: 'X-Men',
+    releaseWave: 'X-Men 2',
+    tags: ['Control', 'Tactical', 'Advanced'],
+    owned: 1,
+    active: 1
+  },
+
+  // The Outcasts
+  {
+    id: 'pale-lady',
+    name: 'Pale Lady',
+    imageUrl: 'https://dice-throne.rulepop.com/heroes/pale-lady.webp',
+    rulepopUrl: 'https://rulepop.com/dice-throne/#pale-lady',
+    complexity: 4,
+    releaseSet: 'The Outcasts',
+    releaseWave: 'Outcasts',
+    tags: ['Control', 'Combo', 'Advanced'],
+    owned: 1,
+    active: 1
+  },
+  {
+    id: 'raveness',
+    name: 'Raveness',
+    imageUrl: 'https://dice-throne.rulepop.com/heroes/raveness.webp',
+    rulepopUrl: 'https://rulepop.com/dice-throne/#raveness',
+    complexity: 3,
+    releaseSet: 'The Outcasts',
+    releaseWave: 'Outcasts',
+    tags: ['Control', 'Tactical'],
+    owned: 1,
+    active: 1
+  },
+  {
+    id: 'headless-horseman',
+    name: 'Headless Horseman',
+    imageUrl: 'https://dice-throne.rulepop.com/heroes/headless-horseman.webp',
+    rulepopUrl: 'https://rulepop.com/dice-throne/#headless-horseman',
+    complexity: 3,
+    releaseSet: 'The Outcasts',
+    releaseWave: 'Outcasts',
+    tags: ['Offensive', 'Aggressive'],
+    owned: 1,
+    active: 1
+  },
+  {
+    id: 'necromancer',
+    name: 'Necromancer',
+    imageUrl: 'https://dice-throne.rulepop.com/heroes/necromancer.webp',
+    rulepopUrl: 'https://rulepop.com/dice-throne/#necromancer',
+    complexity: 5,
+    releaseSet: 'The Outcasts',
+    releaseWave: 'Outcasts',
+    tags: ['Control', 'Tactical', 'Advanced'],
+    owned: 1,
+    active: 1
+  },
+
+  // Single Hero Packs
+  {
+    id: 'alchemist',
+    name: 'Alchemist',
+    imageUrl: 'https://dice-throne.rulepop.com/heroes/alchemist.webp',
+    rulepopUrl: 'https://rulepop.com/dice-throne/#alchemist',
+    complexity: 5,
+    releaseSet: 'Single Hero Pack',
+    releaseWave: 'Promo',
+    tags: ['Control', 'Tactical', 'Advanced'],
+    owned: 1,
+    active: 1
+  },
+  {
+    id: 'deadpool',
+    name: 'Deadpool',
+    imageUrl: 'https://dice-throne.rulepop.com/heroes/deadpool.webp',
+    rulepopUrl: 'https://rulepop.com/dice-throne/#deadpool',
+    complexity: 4,
+    releaseSet: 'Single Hero Pack',
+    releaseWave: 'Promo',
+    tags: ['Offensive', 'Combo', 'Beginner Friendly'],
+    owned: 1,
+    active: 1
+  }
+];
